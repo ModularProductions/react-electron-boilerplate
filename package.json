@@ -1,22 +1,26 @@
 {
-  "name": "chron",
+  "name": "electron-react-boilerplate",
+  "productName": "Electron/React Boilerplate",
   "version": "0.1.0",
   "private": true,
+  "author": "",
+  "copyright": "© year, author",
+  "keywords": [],
   "homepage": "./",
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "concurrently": "^6.2.1",
-    "cross-env": "^7.0.3",
-    "electron-is-dev": "^2.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "wait-on": "^6.0.0",
-    "web-vitals": "^1.0.1"
-  },
+  "license": "ISC",
+  "description": "",
   "main": "public/start-electron.js",
+  "build": {
+    "appId": "com.something.else",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "publish": null
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -25,6 +29,20 @@
     "dev": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
     "electron-package": "./node_modules/.bin/electron-builder -c.extraMetadata.main=build/start-electron.js",
     "preelectron-package": "npm run build"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "concurrently": "^6.2.1",
+    "cross-env": "^7.0.3",
+    "electron-is-dev": "^2.0.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "wait-on": "^6.0.0",
+    "web-vitals": "^1.0.1"
   },
   "eslintConfig": {
     "extends": [
@@ -46,16 +64,7 @@
   },
   "devDependencies": {
     "electron": "^13.2.2",
-    "electron-builder": "^22.11.7"
-  },
-  "build": {
-    "appId": "com.modularproductions.chronomancer",
-    "files": [
-      "build/**/*",
-      "node_modules/**/*"
-    ],
-    "directories": {
-      "buildResources": "assets"
-    }
+    "electron-builder": "^22.11.7",
+    "electron-devtools-installer": "^3.2.0"
   }
 }
